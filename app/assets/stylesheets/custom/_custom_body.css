@@ -1,0 +1,26 @@
+
+body {
+	height: 100%;
+	width : 100%;
+	font-family: arial,sans-serif;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    background: url(https://orig00.deviantart.net/85f3/f/2012/285/8/1/cloud_wallpaper_simple_by_iituckingfypoii-d5hm75j.png) no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}

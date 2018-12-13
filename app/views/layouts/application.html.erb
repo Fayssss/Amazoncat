@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/logo_cat.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Télé à Chat</title>
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <%= render "shared/navbar" %>
+      <%= render 'shared/modalin'  %>
+      <%= render 'shared/modalup'  %>
+      
+
+      <div class ="rendering">
+      <%= render 'layouts/flash_messages' %>
+      <%= yield %>
+      </div>
+
+
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <footer class="footer">
+      <%= render 'shared/footer' %>
+    </footer>
+
+  </body>
+</html>

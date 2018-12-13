@@ -1,0 +1,23 @@
+
+<% if user_signed_in? %>
+    
+  <div class="container">
+  <div class="row viewer">  
+    <%if @orders[0] %>
+    <div class='liste col-3'>
+      <p>&nbsp;</p>
+      <%= render 'layouts/list' %>
+    </div>
+
+
+    <div class='resume col-9'>
+      <% order = [] %>
+      <% if !order[0].nil? %>
+        <%= render 'layouts/hist_order' %>
+      <% end %>
+    </div>
+    <%end%>
+  </div>
+  </div>
+<%end%>
+<p>&nbsp;</p>

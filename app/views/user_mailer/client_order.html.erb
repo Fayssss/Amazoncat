@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--[if !mso]><!-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--<![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <!--[if (gte mso 9)|(IE)]>
+    <style type="text/css">
+        table {border-collapse: collapse;}
+    </style>
+    <![endif]-->
+</head>
+<body>
+    <center class="wrapper">
+        <div class="webkit">
+     
+    <h1> Bonjour <%= @user.username %> !</h1>
+    <h2> Nous préparons votre commande ! </h2>
+    <br/>
+    <h3>Voici un résumé de votre sélection : <h3>
+   <% @items.each do |i| %>
+   Photo de <%= i.title %> :
+   <p><img width="350" height="230" src="<%= image_path(i.image_url) %>"></p>
+   <%end%>
+   <h2> Total de votre commande : <%= @order.price %> $</h2>
+    <h3>Nous vous remercions pour votre confiance.</h3>
+    <h3>A bientôt sur <a href="https://teleachat.herokuapp.com" >Teleachat.com</a></h3>
+        </div>
+    </center>
+</body>
+</html>

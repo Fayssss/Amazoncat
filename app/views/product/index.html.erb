@@ -1,0 +1,46 @@
+    <!-- Page Content -->
+    <div class="container">
+
+      <div class="row">
+
+          <div class="sandbox sandbox-correct-pronounciation">
+          <h1 class="heading heading-correct-pronounciation">
+                  Notre
+            <em>Collection</em>
+          </h1>
+          </div>
+</div>
+     
+
+
+          <div class="row">
+          <% @items.each do |item|  %>
+            <div class="col-lg-4 col-md-6 mb-4" id="img-<%=item.id%>">
+              <div class="card h-100">
+                <a href="/product/<%=item.id%>"><img width="250" height="230" class="card-img-top" src='<%=item.image_url%>' alt=""></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="/product/<%=item.id%>"><%=item.title%></a>
+                  </h4>
+                  <h5><%= item.price%> $</h5>
+                  <p class="card-text">Photographe : <%=item.description%></p>
+                </div>
+                <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+                <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
+                  <%if user_signed_in?%>
+                  <%= link_to "Ajouter au panier", "/cart?id_add="+ item.id.to_s, class: "button  arrow",  method: :post%>
+                  <%end%>
+              </div>
+            </div>
+          <% end%>
+          </div>
+          <!-- /.row -->
+
+        </div>
+        <!-- /.col-lg-9 -->
+
+      </div>
+      <!-- /.row -->
+      <p>&nbsp;</p>
+    </div>
+    <!-- /.container -->

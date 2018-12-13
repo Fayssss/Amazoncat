@@ -1,0 +1,16 @@
+<div class = 'card card-tot d-flex flex-column'>
+  <h2>Commande <%=@order.id%></h2>
+  <p>&nbsp;</p>
+	<h4>Vous avez payé <%= @order.price  %> $</h4>
+  <h4> La commande contient :</h4>
+  <div class = "d-flex flex-wrap justify-content-center">
+  <%@order.items.each_with_index do |item, index|%>
+    <div id='item_<%index%>' class =' col-3 d-flex flex-row align-items-center card card-command'>
+      <img width="90" height="75" class="card-img-top" src='<%=item.image_url%>' alt="">
+      <p><%=@order.quantities[index]%> x <%= item.title  %></p>
+    </div>&nbsp;
+  <%end%>
+  </div>
+  <p>&nbsp;</p>
+	<h4> <br/>Date de la commande: <%=@order.created_at%></h4>
+</div>
